@@ -2,6 +2,33 @@
 
 require_once 'userhelper.civix.php';
 
+
+
+function userhelper_civicrm_searchTasks( $objectType, &$tasks ) {
+	
+/**
+ * Implements hook_civicrm_searchTasks().
+ */
+ 
+  // may want to check for 'membership' and 'event' in the future. 
+  if($objectType == 'contact' ) {
+  	 if (user_access('administer users') ){
+   
+	     $tasks[] = array(
+	      'title' => 'Add Users for Contacts',
+	      'class' => 'fountaintribe_Contact_Form_Task_CreateUsers',
+	    );
+   	} 
+   
+   
+  
+  }
+  
+  
+}
+  
+  
+  
 /**
  * Implements hook_civicrm_config().
  *

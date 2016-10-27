@@ -2,20 +2,20 @@
 <extension key="com.fountaintribe.userhelper" type="module">
   <file>userhelper</file>
   <name>User Helper</name>
-  <description>provides the API 'create' for the entity 'User'</description>
+  <description>provides the API 'create' for the entity 'User'. It also provides a new search action called 'Add Users for Contacts' which is shown to users with the 'Administer Users' permission.</description>
   <license>AGPL-3.0</license>
   <maintainer>
     <author>Sarah Gladstone</author>
     <email>info@fountaintribe.com</email>
   </maintainer>
   <urls>
-    <url desc="Main Extension Page">http://FIXME</url>
-    <url desc="Documentation">http://FIXME</url>
-    <url desc="Support">http://FIXME</url>
+    <url desc="Main Extension Page">https://github.com/sgladstone/com.fountaintribe.userhelper</url>
+    <url desc="Documentation">https://github.com/sgladstone/com.fountaintribe.userhelper</url>
+    <url desc="Support">https://github.com/sgladstone/com.fountaintribe.userhelper</url>
     <url desc="Licensing">http://www.gnu.org/licenses/agpl-3.0.html</url>
   </urls>
   <releaseDate>2016-10-17</releaseDate>
-  <version>1.1</version>
+  <version>1.2</version>
   <develStage>beta</develStage>
   <compatibility>
     <ver>4.7</ver>
