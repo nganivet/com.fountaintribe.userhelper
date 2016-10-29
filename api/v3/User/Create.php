@@ -159,9 +159,13 @@ function ft_create_drupal_user(&$cid, &$send_pwd_email_to_user){
 		   		$last_name_cleaned =  preg_replace("/[^A-Za-z0-9]/", '', $last_name);
 		   		
 		   		
-		   		// pattern is first name, period, last name, then contact id. Such as sarah.gladstone2528
-		   		$tmp_user_name = $first_name_cleaned.".".$last_name_cleaned.$cid ; 
+		   		// old pattern was first name, period, last name, then contact id. Such as sarah.gladstone2528
+		   		//$tmp_user_name = $first_name_cleaned.".".$last_name_cleaned.$cid ; 
 		   		
+		   		// pattern is firstname, first letter of lastname, then contact id. SUch as sarahg2528 
+		   		//
+		   		$lastname_initial = substr( $last_name_cleaned, 0, 1);
+		   		$tmp_user_name = $first_name_cleaned.$lastname_initial.$cid; 
 		   		
 		   	      //   print "<br>Inside dao if for: ".$tmp_user_name."<br>\n"; 
 		   		
