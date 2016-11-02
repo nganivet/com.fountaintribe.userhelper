@@ -227,7 +227,9 @@ function ft_create_drupal_user(&$cid, &$send_pwd_email_to_user){
 					      'init' => $tmp_init ,
 					      'mail' => $tmp_user_email ,
 					      'pass' => $tmp_user_pass ,
-					      'status' => 1
+					      'status' => 1,
+                                              'first_name' => $first_name  ,
+                                              'last_name' => $last_name
 					    );
 					  
 
@@ -279,11 +281,7 @@ function ft_create_drupal_user(&$cid, &$send_pwd_email_to_user){
 
                          
 		   	
-		   	//}else{
-                        //        print "<br>skipped contact id: ".$cid; 
-		   	//	$status[] = "Skipped contact ID $cid";
-		   	//	 $contacts_skipped = $contacts_skipped + 1; 
-		   	//}
+		   	
 		   	
                         
  
@@ -291,7 +289,7 @@ function ft_create_drupal_user(&$cid, &$send_pwd_email_to_user){
 
 		   	$dao->free();   
         	
-    	//	}
+    	
     		
 
                
@@ -318,7 +316,6 @@ function ft_create_drupal_user(&$cid, &$send_pwd_email_to_user){
                    $rtn_array['validation_count'] = $users_validated;
 	    	}
 	    	    
-       // }   
         
         
          $status_str = implode( '<br/>', $status );
@@ -327,40 +324,7 @@ function ft_create_drupal_user(&$cid, &$send_pwd_email_to_user){
 
          $rtn_array['details'] =  $status_str_plaintext;
          
-        /*
-          $session         = CRM_Core_Session::singleton();
-    	  $current_user_contactID       = $session->get('userID');
-         
-        $recipientContacts = array();
-        $recipientContacts[] = array('contact_id' => $current_user_contactID);      
-        $site_name = variable_get('site_name' ); 
-        $subject =  $site_name." - Summary of users created from CRM action"; 
-        $from = variable_get('site_mail'); 
         
-        $html_summary_message = $status_str; 
-        $text_summary_message = $status_str; 
-        // send email of results to the user who ran this action
-        list($sent, $activityId) = CRM_Activity_BAO_Activity::sendEmail(
-      $recipientContacts,
-      $subject,
-      $text_summary_message,
-      $html_summary_message,
-      NULL,
-      NULL,
-      $from ,
-      $attachments,
-      $cc,
-      $bcc,
-      "",
-      $additionalDetails
-    );
-   
-
-    if ($sent) {
-      
-      $status_str =  $status_str."Summary of results were emailed to you, also recorded as an activity.";
-    }
-    */
     
 
    return $rtn_array; 
